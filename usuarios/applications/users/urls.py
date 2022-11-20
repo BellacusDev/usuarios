@@ -10,4 +10,14 @@ urlpatterns = [
         views.UserRegisterViews.as_view(),
         name='user-register'
     ),
+    path(
+            'login/',
+            views.LoginUser.as_view(),
+            name='user-login'
+        ),
+    path(
+            'logout/',
+            views.LogoutView.as_view(),
+            name='user-logout'
+    ),
 ]
