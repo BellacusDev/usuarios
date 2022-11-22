@@ -6,10 +6,11 @@
 </head>
 <body>
   <h1>Panel de usuario</h1>
-  <h1>Bienvenidos</h1>
+  <h1>Bienvenido, {{ user }}</h1>
+  <p>Fecha:   {{ fecha }}</p>
   <ul>
-    <li><a href="{% url 'users_app:user-logout' %}">Cerrar sesion</a> </li>
-    <li><a href="#">actualizar datos</a> </li>
+    <li><a href="{% url 'users_app:user-logout' %}">Cerrar sesion</a></li>
+    <li><a href="{% url 'users_app:user-update' %}">actualizar datos</a> </li>
   </ul>
 </body>
 </html>
