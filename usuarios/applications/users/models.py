@@ -2,8 +2,6 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from .managers import UserManager
 
-# Create your models here.
-
 
 class User(AbstractBaseUser, PermissionsMixin):
     """Modelos usuarios"""
@@ -18,6 +16,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     nombres = models.CharField(max_length=30, blank=True)
     apellidos = models.CharField(max_length=30, blank=True)
     genero = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True)
+    codregistro = models.CharField(max_length=6, default='000000')
+    is_active = models.BooleanField(default=False)
     #
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
